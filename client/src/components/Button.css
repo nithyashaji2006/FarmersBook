@@ -1,0 +1,27 @@
+.common-button {
+  padding: 10px 18px;
+  border: none;
+  border-radius: var(--radius);
+  font-size: 1rem;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.common-button.primary {
+  background-color: var(--primary);
+  color: white;
+}
+
+.common-button.primary:hover {
+  background-color: var(--primary-light);
+}
+
+.common-button.danger {
+  background-color: var(--danger);
+  color: white;
+}
+
+.common-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
