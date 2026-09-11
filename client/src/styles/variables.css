@@ -1,0 +1,29 @@
+:root {
+  /* Colors */
+  --primary: #2e7d32;
+  --primary-light: #66bb6a;
+  --background: #f5f7f4;
+  --surface: #ffffff;
+
+  --text: #222222;
+  --text-light: #666666;
+
+  --border: #dddddd;
+
+  --danger: #d32f2f;
+  --success: #388e3c;
+
+  /* Spacing */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+
+  /* UI */
+  --radius: 10px;
+  --shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+
+  /* Typography */
+  --font-family: Arial, sans-serif;
+}
