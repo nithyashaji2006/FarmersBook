@@ -1,0 +1,25 @@
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-md);
+}
+
+.form-field label {
+  font-weight: 600;
+  color: var(--text);
+}
+
+.form-field input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background-color: var(--surface);
+  color: var(--text);
+  outline: none;
+}
+
+.form-field input:focus {
+  border-color: var(--primary);
+}

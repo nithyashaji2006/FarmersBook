@@ -1,0 +1,16 @@
+.common-card {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: var(--spacing-lg);
+}
+
+.card-title {
+  margin-bottom: var(--spacing-md);
+  color: var(--text);
+}
+
+.card-content {
+  color: var(--text);
+}
