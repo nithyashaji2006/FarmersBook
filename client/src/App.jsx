@@ -1,6 +1,15 @@
+import LandDetails from "./pages/LandDetails";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 import Layout from "./components/Layout";
+import ProtectedRoute from "./components/ProtectedRoute";
+
 import Login from "./pages/Login";
+import Register from "./pages/Register";
+import Profile from "./pages/Profile";
+import AddLand from "./pages/AddLand";
+import Lands from "./pages/Lands";
+import EditLand from "./pages/EditLand";
 
 function App() {
   return (
@@ -8,11 +17,63 @@ function App() {
       <Layout>
         <Routes>
           <Route path="/" element={<h1>FarmersBook</h1>} />
+
           <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<h1>Register</h1>} />
-          <Route path="/dashboard" element={<h1>Dashboard</h1>} />
-          <Route path="/lands" element={<h1>Lands</h1>} />
-          <Route path="/profile" element={<h1>Profile</h1>} />
+          <Route path="/register" element={<Register />} />
+
+          <Route
+            path="/dashboard"
+            element={
+              <ProtectedRoute>
+                <h1>Dashboard</h1>
+              </ProtectedRoute>
+            }
+          />
+
+          <Route
+            path="/lands"
+            element={
+              <ProtectedRoute>
+                <Lands />
+              </ProtectedRoute>
+            }
+          />
+
+          <Route
+  path="/lands/add"
+  element={
+    <ProtectedRoute>
+      <AddLand />
+    </ProtectedRoute>
+  }
+/>
+
+<Route
+  path="/lands/edit/:id"
+  element={
+    <ProtectedRoute>
+      <EditLand />
+    </ProtectedRoute>
+  }
+/>
+
+<Route
+  path="/lands/:id"
+  element={
+    <ProtectedRoute>
+      <LandDetails />
+    </ProtectedRoute>
+  }
+/>
+
+          <Route
+            path="/profile"
+            element={
+              <ProtectedRoute>
+                <Profile />
+              </ProtectedRoute>
+            }
+          />
         </Routes>
       </Layout>
     </BrowserRouter>
