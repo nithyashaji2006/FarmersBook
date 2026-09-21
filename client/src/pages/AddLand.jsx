@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
+import "./AddLand.css";
 
 function AddLand() {
   const { token } = useAuth();
@@ -21,19 +22,22 @@ function AddLand() {
     setMessage("");
 
     try {
-      const response = await fetch("http://localhost:5000/api/lands", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-        body: JSON.stringify({
-          location,
-          area: Number(area),
-          plantationYear: Number(plantationYear),
-          soilType,
-        }),
-      });
+      const response = await fetch(
+        "http://localhost:5000/api/lands",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+          body: JSON.stringify({
+            location,
+            area: Number(area),
+            plantationYear: Number(plantationYear),
+            soilType,
+          }),
+        }
+      );
 
       const data = await response.json();
 
@@ -59,61 +63,114 @@ function AddLand() {
   };
 
   return (
-    <div>
-      <h1>Add Land</h1>
+    <div className="add-land-page">
+      <div className="add-land-card">
 
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label>Location</label>
-          <input
-            type="text"
-            value={location}
-            onChange={(e) => setLocation(e.target.value)}
-            placeholder="Enter land location"
-            required
-          />
+        <div className="add-land-header">
+          <div className="add-land-icon">🌱</div>
+
+          <h1>Add New Land</h1>
+
+          <p>
+            Add your farm land details to FarmersBook
+          </p>
         </div>
 
-        <div>
-          <label>Area</label>
-          <input
-            type="number"
-            step="0.01"
-            min="0"
-            value={area}
-            onChange={(e) => setArea(e.target.value)}
-            placeholder="Enter area"
-            required
-          />
-        </div>
+        <form
+          className="add-land-form"
+          onSubmit={handleSubmit}
+        >
+          <div className="add-land-field">
+            <label htmlFor="location">
+              Location
+            </label>
 
-        <div>
-          <label>Plantation Year</label>
-          <input
-            type="number"
-            value={plantationYear}
-            onChange={(e) => setPlantationYear(e.target.value)}
-            placeholder="Enter plantation year"
-            required
-          />
-        </div>
+            <input
+              id="location"
+              type="text"
+              value={location}
+              onChange={(e) =>
+                setLocation(e.target.value)
+              }
+              placeholder="Enter land location"
+              required
+            />
+          </div>
 
-        <div>
-          <label>Soil Type</label>
-          <input
-            type="text"
-            value={soilType}
-            onChange={(e) => setSoilType(e.target.value)}
-            placeholder="Enter soil type"
-            required
-          />
-        </div>
+          <div className="add-land-field">
+            <label htmlFor="area">
+              Area
+            </label>
 
-        <button type="submit">Add Land</button>
-      </form>
+            <input
+              id="area"
+              type="number"
+              step="0.01"
+              min="0"
+              value={area}
+              onChange={(e) =>
+                setArea(e.target.value)
+              }
+              placeholder="Enter area in acres"
+              required
+            />
+          </div>
 
-      {message && <p>{message}</p>}
-      {error && <p>{error}</p>}
+          <div className="add-land-field">
+            <label htmlFor="plantationYear">
+              Plantation Year
+            </label>
+
+            <input
+              id="plantationYear"
+              type="number"
+              value={plantationYear}
+              onChange={(e) =>
+                setPlantationYear(e.target.value)
+              }
+              placeholder="Enter plantation year"
+              required
+            />
+          </div>
+
+          <div className="add-land-field">
+            <label htmlFor="soilType">
+              Soil Type
+            </label>
+
+            <input
+              id="soilType"
+              type="text"
+              value={soilType}
+              onChange={(e) =>
+                setSoilType(e.target.value)
+              }
+              placeholder="Enter soil type"
+              required
+            />
+          </div>
+
+          {message && (
+            <p className="add-land-message">
+              {message}
+            </p>
+          )}
+
+          {error && (
+            <p className="add-land-error">
+              {error}
+            </p>
+          )}
+
+          <button
+            type="submit"
+            className="add-land-button"
+          >
+            Add Land
+          </button>
+        </form>
+
+      </div>
     </div>
   );
 }
