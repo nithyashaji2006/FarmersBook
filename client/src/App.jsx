@@ -1,6 +1,6 @@
 import LandDetails from "./pages/LandDetails";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-
+import Expenses from "./pages/Expenses";
 import Layout from "./components/Layout";
 import ProtectedRoute from "./components/ProtectedRoute";
 
@@ -81,6 +81,15 @@ function App() {
               </ProtectedRoute>
             }
           />
+
+          <Route
+  path="/expenses"
+  element={
+    <ProtectedRoute>
+      <Expenses />
+    </ProtectedRoute>
+  }
+/>
         </Routes>
       </Layout>
     </BrowserRouter>
