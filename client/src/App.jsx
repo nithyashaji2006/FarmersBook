@@ -11,6 +11,9 @@ import Profile from "./pages/Profile";
 import AddLand from "./pages/AddLand";
 import Lands from "./pages/Lands";
 import EditLand from "./pages/EditLand";
+import Sales from "./pages/Sales";
+import Dashboard from "./pages/Dashboard";
+import Reports from "./pages/Reports";
 
 function App() {
   return (
@@ -21,6 +24,9 @@ function App() {
 
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/sales" element={<Sales />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/reports" element={<Reports />} />
 
           <Route
             path="/dashboard"

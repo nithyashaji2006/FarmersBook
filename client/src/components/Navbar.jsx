@@ -16,6 +16,8 @@ function Navbar() {
           <>
             <Link to="/dashboard">Dashboard</Link>
             <Link to="/lands">Lands</Link>
+            <Link to="/sales">Sales</Link>
+            <Link to="/reports">Reports</Link>
             <Link to="/profile">Profile</Link>
           </>
         ) : (
