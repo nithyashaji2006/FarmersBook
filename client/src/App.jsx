@@ -10,7 +10,7 @@ import Profile from "./pages/Profile";
 import AddLand from "./pages/AddLand";
 import Lands from "./pages/Lands";
 import EditLand from "./pages/EditLand";
-
+import Expenses from "./pages/Expenses";
 function App() {
   return (
     <BrowserRouter>
@@ -74,6 +74,24 @@ function App() {
               </ProtectedRoute>
             }
           />
+
+          <Route
+  path="/profile"
+  element={
+    <ProtectedRoute>
+      <Profile />
+    </ProtectedRoute>
+  }
+/>
+
+<Route
+  path="/expenses"
+  element={
+    <ProtectedRoute>
+      <Expenses />
+    </ProtectedRoute>
+  }
+/>
         </Routes>
       </Layout>
     </BrowserRouter>
