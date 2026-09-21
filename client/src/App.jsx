@@ -1,5 +1,6 @@
+import LandDetails from "./pages/LandDetails";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-
+import Expenses from "./pages/Expenses";
 import Layout from "./components/Layout";
 import ProtectedRoute from "./components/ProtectedRoute";
 
@@ -9,12 +10,6 @@ import Profile from "./pages/Profile";
 import AddLand from "./pages/AddLand";
 import Lands from "./pages/Lands";
 import EditLand from "./pages/EditLand";
-import LandDetails from "./pages/LandDetails";
-
-import Expenses from "./pages/Expenses";
-import Sales from "./pages/Sales";
-import Dashboard from "./pages/Dashboard";
-import Reports from "./pages/Reports";
 
 function App() {
   return (
@@ -26,14 +21,11 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
 
-          <Route path="/sales" element={<Sales />} />
-          <Route path="/reports" element={<Reports />} />
-
           <Route
             path="/dashboard"
             element={
               <ProtectedRoute>
-                <Dashboard />
+                <h1>Dashboard</h1>
               </ProtectedRoute>
             }
           />
@@ -48,31 +40,31 @@ function App() {
           />
 
           <Route
-            path="/lands/add"
-            element={
-              <ProtectedRoute>
-                <AddLand />
-              </ProtectedRoute>
-            }
-          />
+  path="/lands/add"
+  element={
+    <ProtectedRoute>
+      <AddLand />
+    </ProtectedRoute>
+  }
+/>
 
-          <Route
-            path="/lands/edit/:id"
-            element={
-              <ProtectedRoute>
-                <EditLand />
-              </ProtectedRoute>
-            }
-          />
+<Route
+  path="/lands/edit/:id"
+  element={
+    <ProtectedRoute>
+      <EditLand />
+    </ProtectedRoute>
+  }
+/>
 
-          <Route
-            path="/lands/:id"
-            element={
-              <ProtectedRoute>
-                <LandDetails />
-              </ProtectedRoute>
-            }
-          />
+<Route
+  path="/lands/:id"
+  element={
+    <ProtectedRoute>
+      <LandDetails />
+    </ProtectedRoute>
+  }
+/>
 
           <Route
             path="/profile"
@@ -84,13 +76,13 @@ function App() {
           />
 
           <Route
-            path="/expenses"
-            element={
-              <ProtectedRoute>
-                <Expenses />
-              </ProtectedRoute>
-            }
-          />
+  path="/expenses"
+  element={
+    <ProtectedRoute>
+      <Expenses />
+    </ProtectedRoute>
+  }
+/>
         </Routes>
       </Layout>
     </BrowserRouter>

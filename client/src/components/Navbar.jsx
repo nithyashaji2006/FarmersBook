@@ -8,12 +8,12 @@ function Navbar() {
         <Link to="/">FarmersBook</Link>
       </div>
 
-      <div className="navbar-links">
-        <Link to="/dashboard">Dashboard</Link>
-        <Link to="/lands">Lands</Link>
-        <Link to="/expenses">Expenses</Link>
-        <Link to="/profile">Profile</Link>
-      </div>
+  <div className="navbar-links">
+  <Link to="/dashboard">Dashboard</Link>
+  <Link to="/lands">Lands</Link>
+  <Link to="/expenses">Expenses</Link>
+  <Link to="/profile">Profile</Link>
+</div>
     </nav>
   );
 }
