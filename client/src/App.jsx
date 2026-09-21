@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./components/Layout";
 import ProtectedRoute from "./components/ProtectedRoute";
 
+import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Profile from "./pages/Profile";
@@ -19,7 +20,7 @@ function App() {
     <BrowserRouter>
       <Layout>
         <Routes>
-          <Route path="/" element={<h1>FarmersBook</h1>} />
+          <Route path="/" element={<Home />} />
 
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />

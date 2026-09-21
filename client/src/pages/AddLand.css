@@ -1,0 +1,202 @@
+.add-land-page {
+  min-height: calc(100vh - 70px);
+  position: relative;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 50px 20px;
+
+  background:
+    radial-gradient(
+      circle at 5% 15%,
+      rgba(200, 225, 195, 0.45),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 95% 85%,
+      rgba(190, 220, 180, 0.45),
+      transparent 30%
+    ),
+    linear-gradient(
+      135deg,
+      #f3f8f1,
+      #ffffff 50%,
+      #eef6eb
+    );
+}
+
+.add-land-page::before {
+  content: "";
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  left: -220px;
+  bottom: -180px;
+
+  background: #dcebd5;
+  border-radius: 50%;
+  opacity: 0.6;
+}
+
+.add-land-page::after {
+  content: "";
+  position: absolute;
+  width: 500px;
+  height: 220px;
+  right: -180px;
+  bottom: -80px;
+
+  background: #dcebd5;
+  border-radius: 50%;
+  opacity: 0.5;
+}
+
+.add-land-card {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+  max-width: 560px;
+
+  background: rgba(255, 255, 255, 0.96);
+
+  padding: 42px 48px;
+
+  border-radius: 24px;
+
+  border: 1px solid rgba(220, 230, 220, 0.8);
+
+  box-shadow:
+    0 20px 50px rgba(46, 90, 50, 0.12);
+}
+
+.add-land-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.add-land-icon {
+  font-size: 52px;
+  margin-bottom: 10px;
+}
+
+.add-land-header h1 {
+  margin: 0 0 8px;
+
+  font-size: 32px;
+  color: var(--primary);
+}
+
+.add-land-header p {
+  margin: 0;
+
+  color: var(--text-light);
+  font-size: 15px;
+}
+
+.add-land-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.add-land-field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.add-land-field label {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.add-land-field input {
+  width: 100%;
+
+  padding: 13px 15px;
+
+  border: 1px solid #d5ddd5;
+  border-radius: 10px;
+
+  background: #fbfcfb;
+
+  font-size: 16px;
+
+  outline: none;
+
+  transition: 0.2s ease;
+}
+
+.add-land-field input:focus {
+  border-color: var(--primary);
+  background: white;
+
+  box-shadow:
+    0 0 0 4px rgba(46, 125, 50, 0.1);
+}
+
+.add-land-button {
+  width: 100%;
+
+  padding: 14px;
+
+  margin-top: 4px;
+
+  border: none;
+  border-radius: 10px;
+
+  background: var(--primary);
+  color: white;
+
+  font-size: 17px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 5px 14px rgba(46, 125, 50, 0.2);
+
+  transition: 0.2s ease;
+}
+
+.add-land-button:hover {
+  background: #256b29;
+  transform: translateY(-1px);
+}
+
+.add-land-message {
+  padding: 11px 14px;
+
+  border-radius: 8px;
+
+  background: #e8f5e9;
+  color: var(--success);
+
+  font-size: 14px;
+}
+
+.add-land-error {
+  padding: 11px 14px;
+
+  border-radius: 8px;
+
+  background: #ffebee;
+  color: var(--danger);
+
+  font-size: 14px;
+}
+
+@media (max-width: 600px) {
+  .add-land-page {
+    padding: 30px 15px;
+  }
+
+  .add-land-card {
+    padding: 32px 24px;
+    border-radius: 18px;
+  }
+}
