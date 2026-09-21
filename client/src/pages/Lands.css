@@ -1,0 +1,117 @@
+.lands-page {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.lands-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.page-label {
+  color: var(--primary);
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  margin-bottom: 8px;
+}
+
+.lands-header h1 {
+  margin: 0;
+  font-size: 36px;
+}
+
+.add-land-button {
+  padding: 11px 20px;
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  border-radius: var(--radius);
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.add-land-button:hover {
+  opacity: 0.9;
+}
+
+.lands-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.land-card {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: var(--shadow);
+}
+
+.land-card h3 {
+  color: var(--primary);
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+.land-info {
+  margin-bottom: 8px;
+  color: var(--text-light);
+}
+
+.land-info strong {
+  color: var(--text);
+}
+
+.land-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.land-actions button {
+  padding: 8px 14px;
+  border-radius: 6px;
+  border: none;
+  font-size: 14px;
+}
+
+.view-button {
+  background-color: var(--primary);
+  color: white;
+}
+
+.edit-button {
+  background-color: #e8f5e9;
+  color: var(--primary);
+}
+
+.delete-button {
+  background-color: #ffebee;
+  color: var(--danger);
+}
+
+.land-actions button:hover {
+  opacity: 0.85;
+}
+
+.empty-message {
+  text-align: center;
+  padding: 50px;
+  color: var(--text-light);
+}
+
+@media (max-width: 600px) {
+  .lands-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .land-actions {
+    flex-wrap: wrap;
+  }
+}
