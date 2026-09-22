@@ -5,7 +5,9 @@ const {
   getReports,
 } = require("../controllers/reportController");
 
-// Get reports
-router.get("/", getReports);
+const protect = require("../middleware/authMiddleware");
+
+// Get reports for logged-in user
+router.get("/", protect, getReports);
 
 module.exports = router;

@@ -5,7 +5,9 @@ const {
   getDashboard,
 } = require("../controllers/dashboardController");
 
-// Get dashboard data
-router.get("/", getDashboard);
+const protect = require("../middleware/authMiddleware");
+
+// Get dashboard data for logged-in user
+router.get("/", protect, getDashboard);
 
 module.exports = router;

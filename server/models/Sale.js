@@ -2,6 +2,18 @@ const mongoose = require("mongoose");
 
 const saleSchema = new mongoose.Schema(
   {
+    user: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
+      required: true,
+    },
+
+    cropId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Crop",
+      required: true,
+    },
+
     crop: {
       type: String,
       required: true,
@@ -10,12 +22,13 @@ const saleSchema = new mongoose.Schema(
     buyer: {
       type: String,
       required: true,
+      trim: true,
     },
 
     quantity: {
       type: Number,
       required: true,
-      min: 1,
+      min: 0.01,
     },
 
     pricePerKg: {

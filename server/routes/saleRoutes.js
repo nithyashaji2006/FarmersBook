@@ -1,15 +1,26 @@
 const express = require("express");
+
 const router = express.Router();
 
 const {
   addSale,
   getSales,
+  updateSale,
+  deleteSale,
 } = require("../controllers/saleController");
 
-// Add a new sale
-router.post("/", addSale);
+const protect = require("../middleware/authMiddleware");
 
-// Get all sales
-router.get("/", getSales);
+// Add sale
+router.post("/", protect, addSale);
+
+// Get logged-in user's sales
+router.get("/", protect, getSales);
+
+// Update sale
+router.put("/:id", protect, updateSale);
+
+// Delete sale
+router.delete("/:id", protect, deleteSale);
 
 module.exports = router;

@@ -1,16 +1,20 @@
 const Sale = require("../models/Sale");
 
-// Get dashboard summary
+// Get dashboard summary for logged-in user
 const getDashboard = async (req, res) => {
   try {
-    const sales = await Sale.find();
+    const sales = await Sale.find({
+      user: req.user.userId,
+    });
 
     const totalIncome = sales.reduce(
       (sum, sale) => sum + sale.totalIncome,
       0
     );
 
-    const recentSales = await Sale.find()
+    const recentSales = await Sale.find({
+      user: req.user.userId,
+    })
       .sort({ saleDate: -1 })
       .limit(5);
 
