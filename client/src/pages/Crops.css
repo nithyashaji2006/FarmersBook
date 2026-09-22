@@ -1,0 +1,273 @@
+.crops-page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 30px 20px;
+}
+
+.crops-header {
+  margin-bottom: 25px;
+}
+
+.crops-header h1 {
+  color: #245c36;
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+
+.crops-header p {
+  color: #666;
+}
+
+.crops-grid-forms {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 25px;
+}
+
+.crop-card,
+.harvest-card,
+.stock-summary-card,
+.harvest-history-card {
+  background: white;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+  margin-bottom: 25px;
+}
+
+.crop-card h2,
+.harvest-card h2,
+.stock-summary-card h2,
+.harvest-history-card h2 {
+  color: #245c36;
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+.form-single-col {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #333;
+}
+
+.form-group input,
+.form-group select {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 7px;
+  font-size: 15px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #287a45;
+  box-shadow: 0 0 0 2px rgba(40, 122, 69, 0.2);
+}
+
+.btn-primary {
+  padding: 12px;
+  border: none;
+  border-radius: 7px;
+  background-color: #287a45;
+  color: white;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn-primary:hover {
+  background-color: #1f6036;
+}
+
+.btn-primary:disabled {
+  background-color: #999;
+  cursor: not-allowed;
+}
+
+.stock-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.stock-item-card {
+  background: #f4f9f5;
+  border: 1px solid #d0e8d6;
+  border-left: 5px solid #287a45;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.stock-item-card .crop-name {
+  font-weight: 700;
+  font-size: 18px;
+  color: #245c36;
+  margin-bottom: 6px;
+}
+
+.stock-item-card .stock-amount {
+  font-size: 24px;
+  font-weight: bold;
+  color: #1f6036;
+}
+
+.stock-item-card .stock-unit {
+  font-size: 14px;
+  color: #666;
+  font-weight: normal;
+  margin-left: 4px;
+}
+
+.table-container {
+  overflow-x: auto;
+}
+
+table.crops-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table.crops-table th,
+table.crops-table td {
+  padding: 14px;
+  border-bottom: 1px solid #eee;
+  text-align: left;
+}
+
+table.crops-table th {
+  background-color: #287a45;
+  color: white;
+  font-weight: 600;
+}
+
+table.crops-table tr:hover {
+  background-color: #f9f9f9;
+}
+
+.success-message {
+  color: #188038;
+  background-color: #e6f4ea;
+  border: 1px solid #ceead6;
+  padding: 10px 14px;
+  border-radius: 6px;
+  font-weight: 600;
+  margin-top: 12px;
+  font-size: 14px;
+}
+
+.error-message {
+  color: #d93025;
+  background-color: #fce8e6;
+  border: 1px solid #fad2cf;
+  padding: 10px 14px;
+  border-radius: 6px;
+  font-weight: 600;
+  margin-top: 12px;
+  font-size: 14px;
+}
+
+.empty-message {
+  color: #777;
+  font-style: italic;
+  padding: 12px 0;
+}
+
+.loading-container {
+  text-align: center;
+  padding: 40px;
+  color: #287a45;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.action-buttons-row {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-edit,
+.btn-delete,
+.btn-save,
+.btn-cancel,
+.btn-delete-sm {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 5px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn-edit {
+  background-color: #e2eef9;
+  color: #1967d2;
+}
+
+.btn-edit:hover {
+  background-color: #c9e0f7;
+}
+
+.btn-delete {
+  background-color: #fce8e6;
+  color: #d93025;
+}
+
+.btn-delete:hover {
+  background-color: #fad2cf;
+}
+
+.btn-save {
+  background-color: #287a45;
+  color: white;
+}
+
+.btn-save:hover {
+  background-color: #1f6036;
+}
+
+.btn-cancel {
+  background-color: #e0e0e0;
+  color: #333;
+}
+
+.btn-cancel:hover {
+  background-color: #cccccc;
+}
+
+.btn-delete-sm {
+  background-color: #fce8e6;
+  color: #d93025;
+  padding: 4px 8px;
+  font-size: 12px;
+}
+
+.btn-delete-sm:hover {
+  background-color: #fad2cf;
+}
+
+@media (max-width: 768px) {
+  .crops-grid-forms {
+    grid-template-columns: 1fr;
+  }
+
+  .crops-header h1 {
+    font-size: 26px;
+  }
+}
