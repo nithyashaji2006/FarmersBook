@@ -1,14 +1,20 @@
 import { useEffect, useState } from "react";
+import { useAuth } from "../context/AuthContext";
 import { Link } from "react-router-dom";
 import "./Dashboard.css";
 
 function Dashboard() {
+  const { token } = useAuth();
   const [dashboard, setDashboard] = useState(null);
   const [error, setError] = useState("");
 
   const fetchDashboard = async () => {
     try {
-      const response = await fetch("http://localhost:5000/api/dashboard");
+      const response = await fetch("http://localhost:5000/api/dashboard", {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
       const data = await response.json();
 
       if (response.ok) {
@@ -23,8 +29,10 @@ function Dashboard() {
   };
 
   useEffect(() => {
-    fetchDashboard();
-  }, []);
+    if (token) {
+      fetchDashboard();
+    }
+  }, [token]);
 
   if (error) {
     return (

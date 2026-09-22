@@ -1,17 +1,17 @@
 const Sale = require("../models/Sale");
 
-// Get financial reports
+// Get financial reports for logged-in user
 const getReports = async (req, res) => {
   try {
-    const sales = await Sale.find().sort({ saleDate: -1 });
+    const sales = await Sale.find({
+      user: req.user.userId,
+    }).sort({ saleDate: -1 });
 
-    // Calculate total income
     const totalIncome = sales.reduce(
       (sum, sale) => sum + sale.totalIncome,
       0
     );
 
-    // Group sales by crop
     const cropSales = {};
 
     sales.forEach((sale) => {
