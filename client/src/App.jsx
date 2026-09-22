@@ -14,6 +14,7 @@ import EditLand from "./pages/EditLand";
 import Sales from "./pages/Sales";
 import Dashboard from "./pages/Dashboard";
 import Reports from "./pages/Reports";
+import Crops from "./pages/Crops";
 
 function App() {
   return (
@@ -27,6 +28,15 @@ function App() {
           <Route path="/sales" element={<Sales />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/reports" element={<Reports />} />
+
+          <Route
+            path="/crops"
+            element={
+              <ProtectedRoute>
+                <Crops />
+              </ProtectedRoute>
+            }
+          />
 
           <Route
             path="/dashboard"
