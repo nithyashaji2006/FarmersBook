@@ -1,0 +1,277 @@
+.sales-page {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ---------- Header ---------- */
+
+.sales-header {
+  margin-bottom: 30px;
+}
+
+.page-label {
+  color: var(--primary);
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  margin-bottom: 8px;
+}
+
+.sales-header h1 {
+  font-size: 38px;
+  margin: 0 0 8px;
+}
+
+.page-subtitle {
+  color: var(--text-light);
+  font-size: 15px;
+  margin: 0;
+}
+
+/* ---------- Cards ---------- */
+
+.sales-card,
+.history-section {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: var(--shadow);
+}
+
+.sales-card {
+  margin-bottom: 30px;
+}
+
+/* ---------- Section Heading ---------- */
+
+.section-heading {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 28px;
+}
+
+.section-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  background: #e8f5e9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  flex-shrink: 0;
+}
+
+.section-heading h2 {
+  margin: 0 0 4px;
+  font-size: 22px;
+}
+
+.section-heading p {
+  margin: 0;
+  color: var(--text-light);
+  font-size: 14px;
+}
+
+/* ---------- Form ---------- */
+
+.sales-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.sales-field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.sales-field label {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.sales-field input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: #fafafa;
+  outline: none;
+  font-size: 15px;
+  transition: 0.2s ease;
+}
+
+.sales-field input:focus {
+  border-color: var(--primary);
+  background: white;
+  box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.1);
+}
+
+/* ---------- Income ---------- */
+
+.income-box {
+  margin-top: 5px;
+  padding: 18px 20px;
+  border-radius: 10px;
+  background: #e8f5e9;
+  border: 1px solid #c8e6c9;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.income-box span {
+  display: block;
+  font-weight: bold;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.income-box small {
+  color: var(--text-light);
+}
+
+.income-box strong {
+  color: var(--primary);
+  font-size: 24px;
+}
+
+/* ---------- Button ---------- */
+
+.record-sale-button {
+  width: 100%;
+  padding: 13px;
+  border: none;
+  border-radius: 8px;
+  background: var(--primary);
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.record-sale-button:hover {
+  background: #256b29;
+  transform: translateY(-1px);
+}
+
+/* ---------- Messages ---------- */
+
+.sales-message {
+  margin-top: 18px;
+  padding: 11px 14px;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.sales-message.success {
+  background: #e8f5e9;
+  color: var(--success);
+}
+
+.sales-message.error {
+  background: #ffebee;
+  color: var(--danger);
+}
+
+/* ---------- History ---------- */
+
+.history-section {
+  margin-bottom: 30px;
+}
+
+.sales-table-wrapper {
+  overflow-x: auto;
+}
+
+.sales-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.sales-table th {
+  text-align: left;
+  padding: 14px 12px;
+  background: #f5f7f4;
+  color: var(--text-light);
+  font-weight: bold;
+  border-bottom: 1px solid var(--border);
+}
+
+.sales-table td {
+  padding: 16px 12px;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.sales-table tbody tr:hover {
+  background: #fafafa;
+}
+
+.crop-name {
+  font-weight: bold;
+  color: var(--primary);
+}
+
+.income-value {
+  font-weight: bold;
+  color: var(--primary);
+}
+
+/* ---------- Empty State ---------- */
+
+.empty-sales {
+  text-align: center;
+  padding: 45px 20px;
+  color: var(--text-light);
+}
+
+.empty-sales div {
+  font-size: 38px;
+  margin-bottom: 10px;
+}
+
+.empty-sales p {
+  font-weight: bold;
+  color: var(--text);
+  margin-bottom: 5px;
+}
+
+.empty-sales span {
+  font-size: 14px;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 700px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .sales-card,
+  .history-section {
+    padding: 22px;
+  }
+
+  .income-box {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .sales-header h1 {
+    font-size: 32px;
+  }
+}
