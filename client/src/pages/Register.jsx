@@ -18,6 +18,26 @@ function Register() {
     setMessage("");
     setError("");
 
+    // Strong email validation
+    const emailRegex =
+  /^[A-Za-z0-9][A-Za-z0-9._%+-]*@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+
+    if (!emailRegex.test(email)) {
+      setError("Please enter a valid email address.");
+      return;
+    }
+
+    // Strong password validation
+    const passwordRegex =
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+
+    if (!passwordRegex.test(password)) {
+      setError(
+        "Password must be at least 8 characters and contain uppercase, lowercase, number and special character."
+      );
+      return;
+    }
+
     try {
       const response = await fetch(
         "http://localhost:5000/api/auth/register",
@@ -73,10 +93,8 @@ function Register() {
           </p>
         </div>
 
-        <form
-          className="register-form"
-          onSubmit={handleSubmit}
-        >
+        <form className="register-form" onSubmit={handleSubmit}>
+
           <div className="register-field">
             <label htmlFor="name">Name</label>
 
@@ -91,9 +109,7 @@ function Register() {
           </div>
 
           <div className="register-field">
-            <label htmlFor="register-email">
-              Email
-            </label>
+            <label htmlFor="register-email">Email</label>
 
             <input
               id="register-email"
@@ -106,9 +122,7 @@ function Register() {
           </div>
 
           <div className="register-field">
-            <label htmlFor="register-password">
-              Password
-            </label>
+            <label htmlFor="register-password">Password</label>
 
             <input
               id="register-password"
@@ -118,6 +132,11 @@ function Register() {
               placeholder="Create a password"
               required
             />
+
+            <small>
+              Minimum 8 characters with uppercase, lowercase, number and
+              special character.
+            </small>
           </div>
 
           {message && (

@@ -14,8 +14,36 @@ const registerUser = async (req, res) => {
       });
     }
 
+    // Validate email format
+    const emailRegex =
+  /^[A-Za-z0-9][A-Za-z0-9._%+-]*@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+
+    if (!emailRegex.test(email)) {
+      return res.status(400).json({
+        message: "Please provide a valid email address",
+      });
+    }
+
+    // Validate password strength
+    // Minimum 8 characters
+    // At least one uppercase letter
+    // At least one lowercase letter
+    // At least one number
+    // At least one special character
+    const passwordRegex =
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+
+    if (!passwordRegex.test(password)) {
+      return res.status(400).json({
+        message:
+          "Password must be at least 8 characters and contain uppercase, lowercase, number and special character",
+      });
+    }
+
     // Check if user already exists
-    const existingUser = await User.findOne({ email });
+    const existingUser = await User.findOne({
+      email: email.toLowerCase().trim(),
+    });
 
     if (existingUser) {
       return res.status(400).json({
@@ -23,13 +51,13 @@ const registerUser = async (req, res) => {
       });
     }
 
-    // Hash the password
+    // Hash the password before storing it
     const hashedPassword = await bcrypt.hash(password, 10);
 
     // Create user
     const user = await User.create({
-      name,
-      email,
+      name: name.trim(),
+      email: email.toLowerCase().trim(),
       password: hashedPassword,
     });
 
@@ -63,7 +91,9 @@ const loginUser = async (req, res) => {
     }
 
     // Find user by email
-    const user = await User.findOne({ email });
+    const user = await User.findOne({
+      email: email.toLowerCase().trim(),
+    });
 
     if (!user) {
       return res.status(401).json({
