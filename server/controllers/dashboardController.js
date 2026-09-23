@@ -1,27 +1,38 @@
 const Sale = require("../models/Sale");
+const Expense = require("../models/Expense");
 
-// Get dashboard summary for logged-in user
 const getDashboard = async (req, res) => {
   try {
-    const sales = await Sale.find({
-      user: req.user.userId,
-    });
+    const userId = req.user.userId;
+
+    // Get logged-in user's sales
+    const sales = await Sale.find({ user: userId });
 
     const totalIncome = sales.reduce(
       (sum, sale) => sum + sale.totalIncome,
       0
     );
 
-    const recentSales = await Sale.find({
-      user: req.user.userId,
-    })
+    // Get logged-in user's expenses
+    const expenses = await Expense.find({ user: userId });
+
+    const totalExpenses = expenses.reduce(
+      (sum, expense) => sum + expense.amount,
+      0
+    );
+
+    // Calculate profit/loss
+    const profitLoss = totalIncome - totalExpenses;
+
+    // Get recent sales
+    const recentSales = await Sale.find({ user: userId })
       .sort({ saleDate: -1 })
       .limit(5);
 
     res.status(200).json({
       totalIncome,
-      totalExpenses: 0,
-      profitLoss: totalIncome,
+      totalExpenses,
+      profitLoss,
       recentSales,
     });
   } catch (error) {
@@ -34,6 +45,4 @@ const getDashboard = async (req, res) => {
   }
 };
 
-module.exports = {
-  getDashboard,
-};
+module.exports = { getDashboard };
