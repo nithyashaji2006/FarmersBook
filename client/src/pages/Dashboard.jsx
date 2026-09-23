@@ -216,7 +216,7 @@ function Dashboard() {
 
             <Link to="/profile">
               <span>👤</span>
-              Update Profile
+              View Profile
               <strong>›</strong>
             </Link>
           </div>
