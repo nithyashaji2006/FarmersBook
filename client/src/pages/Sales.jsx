@@ -433,13 +433,14 @@ function Sales() {
           <div className="sales-field">
             <label>Sale Date</label>
 
-            <input
-              type="date"
-              name="saleDate"
-              value={formData.saleDate}
-              onChange={handleChange}
-              required
-            />
+          <input
+  type="date"
+  name="saleDate"
+  value={formData.saleDate}
+  max={new Date().toISOString().split("T")[0]}
+  onChange={handleChange}
+  required
+/>
           </div>
 
           {/* Total Income */}
