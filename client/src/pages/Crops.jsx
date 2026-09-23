@@ -394,12 +394,13 @@ function Crops() {
             <div className="form-group">
               <label htmlFor="harvestDateInput">Harvest Date</label>
               <input
-                id="harvestDateInput"
-                type="date"
-                value={harvestDate}
-                onChange={(e) => setHarvestDate(e.target.value)}
-                required
-              />
+  id="harvestDateInput"
+  type="date"
+  value={harvestDate}
+  max={new Date().toISOString().split("T")[0]}
+  onChange={(e) => setHarvestDate(e.target.value)}
+  required
+/>
             </div>
 
             <button
