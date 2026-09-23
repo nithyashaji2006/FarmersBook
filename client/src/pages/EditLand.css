@@ -1,0 +1,169 @@
+.edit-land-page {
+  min-height: 100vh;
+  padding: 40px 6%;
+  background: #f6f8f6;
+  box-sizing: border-box;
+}
+
+.edit-land-header {
+  margin-bottom: 28px;
+}
+
+.edit-land-label {
+  margin: 0 0 6px;
+  color: #2e7d32;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+}
+
+.edit-land-header h1 {
+  margin: 0;
+  color: #14213d;
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.edit-land-card {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 32px;
+  background: #ffffff;
+  border: 1px solid #e0e4e0;
+  border-radius: 14px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+.edit-land-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 20px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid #e5e8e5;
+}
+
+.edit-land-title span {
+  font-size: 26px;
+}
+
+.edit-land-title h2 {
+  margin: 0;
+  color: #237a32;
+  font-size: 21px;
+}
+
+.edit-land-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.form-group label {
+  color: #263626;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.form-group input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px 14px;
+  border: 1px solid #cfd6cf;
+  border-radius: 7px;
+  font-size: 15px;
+  color: #222;
+  background: #ffffff;
+  outline: none;
+  transition: 0.2s ease;
+}
+
+.form-group input:focus {
+  border-color: #2e7d32;
+  box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.12);
+}
+
+.edit-land-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.update-button,
+.cancel-button {
+  border: none;
+  border-radius: 7px;
+  padding: 12px 22px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.update-button {
+  background: #2e7d32;
+  color: #ffffff;
+}
+
+.update-button:hover {
+  background: #256628;
+}
+
+.cancel-button {
+  background: #e9f2ea;
+  color: #2e7d32;
+}
+
+.cancel-button:hover {
+  background: #dcebdd;
+}
+
+.edit-land-success {
+  margin: 0;
+  padding: 10px 12px;
+  border-radius: 7px;
+  background: #e8f5e9;
+  color: #2e7d32;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.edit-land-error {
+  margin: 0;
+  padding: 10px 12px;
+  border-radius: 7px;
+  background: #ffebee;
+  color: #c62828;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.edit-land-status {
+  text-align: center;
+  padding: 80px 20px;
+  color: #555;
+}
+
+@media (max-width: 650px) {
+  .edit-land-page {
+    padding: 25px 20px;
+  }
+
+  .edit-land-header h1 {
+    font-size: 30px;
+  }
+
+  .edit-land-card {
+    padding: 22px;
+  }
+
+  .edit-land-actions {
+    flex-direction: column;
+  }
+}

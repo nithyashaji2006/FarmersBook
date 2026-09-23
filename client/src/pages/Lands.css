@@ -79,11 +79,6 @@
   font-size: 14px;
 }
 
-.view-button {
-  background-color: var(--primary);
-  color: white;
-}
-
 .edit-button {
   background-color: #e8f5e9;
   color: var(--primary);

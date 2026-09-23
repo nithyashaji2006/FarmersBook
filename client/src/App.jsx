@@ -1,4 +1,3 @@
-import LandDetails from "./pages/LandDetails";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Expenses from "./pages/Expenses";
 import Layout from "./components/Layout";
@@ -25,15 +24,12 @@ function App() {
 
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/sales" element={<Sales />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/reports" element={<Reports />} />
 
           <Route
-            path="/crops"
+            path="/sales"
             element={
               <ProtectedRoute>
-                <Crops />
+                <Sales />
               </ProtectedRoute>
             }
           />
@@ -42,7 +38,25 @@ function App() {
             path="/dashboard"
             element={
               <ProtectedRoute>
-                <h1>Dashboard</h1>
+                <Dashboard />
+              </ProtectedRoute>
+            }
+          />
+
+          <Route
+            path="/reports"
+            element={
+              <ProtectedRoute>
+                <Reports />
+              </ProtectedRoute>
+            }
+          />
+
+          <Route
+            path="/crops"
+            element={
+              <ProtectedRoute>
+                <Crops />
               </ProtectedRoute>
             }
           />
@@ -57,31 +71,22 @@ function App() {
           />
 
           <Route
-  path="/lands/add"
-  element={
-    <ProtectedRoute>
-      <AddLand />
-    </ProtectedRoute>
-  }
-/>
+            path="/lands/add"
+            element={
+              <ProtectedRoute>
+                <AddLand />
+              </ProtectedRoute>
+            }
+          />
 
-<Route
-  path="/lands/edit/:id"
-  element={
-    <ProtectedRoute>
-      <EditLand />
-    </ProtectedRoute>
-  }
-/>
-
-<Route
-  path="/lands/:id"
-  element={
-    <ProtectedRoute>
-      <LandDetails />
-    </ProtectedRoute>
-  }
-/>
+          <Route
+            path="/lands/edit/:id"
+            element={
+              <ProtectedRoute>
+                <EditLand />
+              </ProtectedRoute>
+            }
+          />
 
           <Route
             path="/profile"
@@ -93,13 +98,13 @@ function App() {
           />
 
           <Route
-  path="/expenses"
-  element={
-    <ProtectedRoute>
-      <Expenses />
-    </ProtectedRoute>
-  }
-/>
+            path="/expenses"
+            element={
+              <ProtectedRoute>
+                <Expenses />
+              </ProtectedRoute>
+            }
+          />
         </Routes>
       </Layout>
     </BrowserRouter>

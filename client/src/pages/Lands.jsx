@@ -90,7 +90,9 @@ function Lands() {
         </div>
 
         <Link to="/lands/add">
-          <button className="add-land-button">+ Add New Land</button>
+          <button className="add-land-button">
+            + Add New Land
+          </button>
         </Link>
       </div>
 
@@ -122,12 +124,6 @@ function Lands() {
             </p>
 
             <div className="land-actions">
-              <Link to={`/lands/${land._id}`}>
-                <button className="view-button">
-                  View Details
-                </button>
-              </Link>
-
               <Link to={`/lands/edit/${land._id}`}>
                 <button className="edit-button">
                   Edit
